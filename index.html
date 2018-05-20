@@ -22,7 +22,7 @@
 <meta name="msapplication-TileColor" content="#0077d7">
 <meta name="msapplication-TileImage" content="icons/ms-icon-144x144.png">
 <meta name="theme-color" content="#0077d7">
-<link href="https://fonts.googleapis.com/css?family=Roboto:400,500&amp;subset=cyrillic" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,500&amp;subset=cyrillic" rel="preload" as="style">
 
 <script>
 if ('serviceWorker' in navigator) {
@@ -40,7 +40,7 @@ if ('serviceWorker' in navigator) {
 
   <title>IBLS</title>
 
-  <link rel="preload" as="style" href="style/style.css">
+  <link rel="stylesheet" href="./style/style.css" >
 
   <script rel="preload" as="script" src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
   <script>

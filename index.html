@@ -40,9 +40,9 @@ if ('serviceWorker' in navigator) {
 
   <title>IBLS</title>
 
-  <link rel="stylesheet" href="style/style.css">
+  <link rel="preload" as="style" href="style/style.css">
 
-  <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+  <script rel="preload" as="script" src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
   <script>
     // Initialize Firebase
     var config = {
@@ -94,7 +94,7 @@ if ('serviceWorker' in navigator) {
         <div class="col-xs-12">
           <div class="start-screen">
               <h1>IBLS</h1>
-              <a href="./html2.html"></a>
+              <a href="./html2.html">to</a>
           </div>
         </div>
       </div>

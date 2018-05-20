@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="manifest" href="/manifest.json" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width initial-scale=1">
+
+<link rel="apple-touch-icon" sizes="57x57" href="icons">
+<link rel="apple-touch-icon" sizes="60x60" href="icons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="icons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="icons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="icons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="icons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="icons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="icons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="icons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="icons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="icons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+<link rel="manifest" href="/IBLS_PWA/manifest.json">
+<meta name="msapplication-TileColor" content="#0077d7">
+<meta name="msapplication-TileImage" content="icons/ms-icon-144x144.png">
+<meta name="theme-color" content="#0077d7">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,500&amp;subset=cyrillic" rel="stylesheet">
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('./sw.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker   registration failed: ', err);
+    });
+  });
+}
+</script>
+
+  <title>IBLS</title>
+
+  <link rel="stylesheet" href="style/style.css">
+
+  <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyA-PYDe1kJp2mCpk4YLy69NXSIe6BMDcoo",
+      authDomain: "ibls-project-3f7f5.firebaseapp.com",
+      databaseURL: "https://ibls-project-3f7f5.firebaseio.com",
+      projectId: "ibls-project-3f7f5",
+      storageBucket: "ibls-project-3f7f5.appspot.com",
+      messagingSenderId: "280030530760"
+    };
+    firebase.initializeApp(config);
+
+    const messaging = firebase.messaging();
+    messaging.requestPermission()
+    .then(function() {
+      console.log('Have permission');
+      return messaging.getToken();
+    })
+    .then(function(token) {
+      console.log(token);
+    })
+    .catch(function(err) {
+      console.log('Error ' + err);
+    })
+
+    messaging.onMessage(function(payload) {
+      console.log('onMessage: ,' + payload)
+    })
+    
+  </script>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <header>
+          <button><svg width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 12H18V10H0V12ZM0 7H18V5H0V7ZM0 0V2H18V0H0Z" fill="#fff"/>
+            </svg>
+            </button>
+          <div>Авторизация</div>
+        </header>
+      </div>
+    </div>
+  </div>
+  <main>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="start-screen">
+              <h1>2</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

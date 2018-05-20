@@ -4,7 +4,7 @@
       "short_name": "IBLS",
       "description": "IBLS test pwa template",
       "lang": "ru-RU",
-      "start_url": "/",
+      "start_url": "./index.html",
       "display": "standalone",
       "theme_color": "#0077d7",
       "background_color": "#0077d7",

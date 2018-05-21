@@ -75,24 +75,22 @@ if ('serviceWorker' in navigator) {
   </script>
 </head>
 <body>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-xs-12">
-        <header>
+  <header>
+    <div class="container">
+        <div class="wrapper">
           <button><svg width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M0 12H18V10H0V12ZM0 7H18V5H0V7ZM0 0V2H18V0H0Z" fill="#fff"/>
             </svg>
             </button>
-          <div>Авторизация</div>
-        </header>
-      </div>
+          <div class="title">Авторизация</div>
+        </div>
     </div>
-  </div>
-  <main>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="auth">
+  </header>
+
+    <div class="auth">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
             <form action="">
               <div class="form-group">
                 <input type="text" placeholder="Логин" required>
@@ -102,11 +100,12 @@ if ('serviceWorker' in navigator) {
                 </div> 
                 <button class="submit" type="submit">Войти</button>
                 <button class="forgot-password" type="button">Забыли пароль?</button>
+                <a href="notification.html">Уведомления</a>
             </form>
           </div>
         </div>
       </div>
     </div>
-  </main>
+
 </body>
 </html>

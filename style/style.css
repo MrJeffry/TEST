@@ -56,17 +56,19 @@ input {
   --blue: #2F80ED;
   --white: #ffffff;
   --gray: #eeeeee;
-  --black-087: rgba(0,0,0,.87);
-  --black-054: rgba(0,0,0,.54);
+  --black087: rgba(0,0,0,.87);
+  --black054: rgba(0,0,0,.54);
   --alert: linear-gradient(0deg, #F44336, #F44336);
 
-  --font: 'Roboto', Verdana ,sans-serif;
-  --text-size: 14px;
-  --font-weight-regural: 400;
-  --font-weight-medium: 500;
-  --text-opacity: .25;
+  --buttonHoverGray: linear-gradient(0deg, rgba(153, 153, 153, 0.38), rgba(153, 153, 153, 0.38)), rgba(255, 255, 255, 0.87);
 
-  --border-radius: 2px;
+  --font: 'Roboto', Verdana ,sans-serif;
+  --textSize: 14px;
+  --fontWeightRegural: 400;
+  --fontWeightMedium: 500;
+  --textOpacity: .25;
+
+  --borderRadius: 2px;
 }
 
 * {
@@ -74,14 +76,14 @@ input {
 }
 
 html {
-  font-size: var(--text-size);
+  font-size: var(--textSize);
 }
 
 body {
   background-color: var(--gray);
   font-family: var(--font);
   color: var(--white);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--fontWeightMedium);
 }
 
 .container {
@@ -113,7 +115,7 @@ header button {
 
 header .title {
   font-size: 1.5rem;
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--fontWeightMedium);
 }
 
 main {
@@ -196,7 +198,7 @@ nav a.active svg path{
 
 .auth input::-webkit-input-placeholder {
   color: var(--white);
-  opacity: var(--text-opacity);
+  opacity: var(--textOpacity);
   font-size: 16px;
 }
 
@@ -204,9 +206,14 @@ nav a.active svg path{
   display: inline-block;
   width: 100%;
   padding: 10px 0;
+  color: var(--blue);
   background-color: var(--white);
   text-transform: uppercase;
-  border-radius: var(--border-radius);
+  border-radius: var(--borderRadius);
+}
+
+.auth .submit:active {
+  background: var(--buttonHoverGray);
 }
 
 .auth .forgot-password {
@@ -215,32 +222,33 @@ nav a.active svg path{
   width: 100%;
   background-color: var(--blue);
   color: var(--white);
-  opacity: var(--text-opacity);
+  opacity: var(--textOpacity);
 }
 
 .notifications .notification-card {
   display: flex;
+  justify-content: space-between;
   padding: 16px 13px 20px 13px; 
   margin-bottom: 1px;
   background: var(--white);
-  border-radius: var(--border-radius);
+  border-radius: var(--borderRadius);
   text-decoration: none;
 } 
 
 .notification-card h2 {
   margin-bottom: 6px;
   font-size: 16px;
-  color: var(--black-087);
+  color: var(--black087);
 }
 
 .notification-card p {
   font-size: 14px;
   line-height: 1.4;
-  color: var(--black-054);
+  color: var(--black054);
 }
 
 .notification-card .time {
-  color: var(--black-054);
+  color: var(--black054);
 }
 .notifications .notification-card--new {
   background: linear-gradient(0deg, #CDE2FF, #CDE2FF);
